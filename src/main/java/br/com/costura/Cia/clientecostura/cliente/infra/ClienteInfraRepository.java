@@ -1,5 +1,7 @@
 package br.com.costura.Cia.clientecostura.cliente.infra;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.costura.Cia.clientecostura.cliente.application.repository.ClienteRepository;
@@ -19,5 +21,12 @@ public class ClienteInfraRepository implements ClienteRepository {
 		clienteSpringDataJPARepository.save(cliente);
 		log.info("[finaliza] ClienteInfraRepository - salva");
 		return cliente;
+	}
+
+	@Override
+	public List<Cliente> buscaTodosCleintes() {
+		log.info("[inicia] ClienteInfraRepository - buscaTodosCleintes");
+		log.info("[inicia] ClienteInfraRepository - buscaTodosCleintes");
+		return null;
 	}
 }
