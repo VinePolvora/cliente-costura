@@ -1,6 +1,7 @@
 package br.com.costura.Cia.clientecostura.cliente.application.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,5 +29,12 @@ public class ClienteController implements ClienteAPI {
 		List<ClienteListResponse> clientes = clienteService.buscaTodosClientes();
 		log.info("[finaliza] ClienteController - getTodosClientes");
 		return clientes;
+	}
+
+	@Override
+	public ClienteDetalhadoResponse getClienteAtravesId(UUID idCliente) {
+		log.info("[inicia] ClienteController - getClienteAtravesId");
+		log.info("[finaliza] ClienteController - getClienteAtravesId");
+		return null;
 	}
 }
