@@ -3,6 +3,8 @@ package br.com.costura.Cia.clientecostura.cliente.application.api;
 import java.util.List;
 import java.util.UUID;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.costura.Cia.clientecostura.cliente.application.service.ClienteService;
@@ -46,5 +48,12 @@ public class ClienteController implements ClienteAPI {
 		log.info("[inicia] {}", idCliente);
 		clienteService.deletaClienteAtravesId(idCliente);
 		log.info("[finaliza] ClienteController - deletaClienteAtravesId");
+	}
+
+	@Override
+	public void alteraCliente(UUID idCliente, @Valid ClienteAlteracaoRequest clienteAlteracaoRequest) {
+		log.info("[inicia] ClienteController - alteraCliente");
+		log.info("[inicia] {}", idCliente);
+		log.info("[finaliza] ClienteController - alteraCliente");
 	}
 }
