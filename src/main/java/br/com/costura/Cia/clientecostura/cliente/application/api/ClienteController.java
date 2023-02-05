@@ -54,6 +54,7 @@ public class ClienteController implements ClienteAPI {
 	public void alteraCliente(UUID idCliente, @Valid ClienteAlteracaoRequest clienteAlteracaoRequest) {
 		log.info("[inicia] ClienteController - alteraCliente");
 		log.info("[inicia] {}", idCliente);
+		clienteService.alteraCliente(idCliente, clienteAlteracaoRequest);
 		log.info("[finaliza] ClienteController - alteraCliente");
 	}
 }
