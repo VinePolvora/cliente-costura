@@ -1,5 +1,6 @@
 package br.com.costura.Cia.clientecostura.costura.application.api;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.validation.Valid;
@@ -23,5 +24,13 @@ public class CosturaController implements CosturaAPI {
 		CosturaResponse costura = costuraService.criaCostura(idCliente, costuraRequest);
 		log.info("[finaliza] CosturaController - postCostura");
 		return costura;
+	}
+
+	@Override
+	public List<CosturaClienteListResponse> getCosturasDoClientecomId(UUID idCliente) {
+		log.info("[inicia] CosturaController - getcosturasDoClientecomId");
+		log.info("[idCliente] {}", idCliente);
+		log.info("[finaliza] CosturaController - getcosturasDoClientecomId");
+		return null;
 	}
 }
