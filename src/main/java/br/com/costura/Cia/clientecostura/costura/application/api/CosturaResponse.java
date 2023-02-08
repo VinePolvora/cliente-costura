@@ -1,5 +1,10 @@
 package br.com.costura.Cia.clientecostura.costura.application.api;
 
-public class CosturaResponse {
+import java.util.UUID;
 
+import lombok.Value;
+
+@Value
+public class CosturaResponse {
+	private UUID idCostura;
 }

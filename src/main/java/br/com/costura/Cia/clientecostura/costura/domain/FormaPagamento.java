@@ -1,5 +1,5 @@
 package br.com.costura.Cia.clientecostura.costura.domain;
 
-public enum Pagamento {
-	PIX, DINHEIRO, CARTÃO
+public enum FormaPagamento {
+	PIX, DINHEIRO, CARTÃO;
 }

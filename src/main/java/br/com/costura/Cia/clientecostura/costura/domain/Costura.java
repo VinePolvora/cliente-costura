@@ -11,8 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
-import br.com.costura.Cia.clientecostura.cliente.domain.Sexo;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,15 +26,18 @@ public class Costura {
 	@Column(columnDefinition = "uuid", name = "idCostura", updatable = false, unique = true, nullable = false)
 	private UUID idCostura;
 	@NotBlank
-	private String nomeDonoDaPeça;
+	private String nomeDonoDaPeca;
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private TipoTecido tipoTecido;
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private Tamanho tamanho;
+	@NotNull
 	@Enumerated(EnumType.STRING)
-	private Pagamento pagamento;
-	@NotBlank
-	private Sexo sexo;
+	private FormaPagamento formaPagamento;
+	@NotNull
+	private SexoCostura sexoCostura;
 	private Boolean aceitaTermos;
 
 	private LocalDateTime dataHoraDoCadastro;

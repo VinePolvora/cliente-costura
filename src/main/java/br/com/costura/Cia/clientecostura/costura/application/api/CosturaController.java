@@ -15,6 +15,7 @@ public class CosturaController implements CosturaAPI {
 	@Override
 	public CosturaResponse postCostura(UUID idCliente, @Valid CosturaRequest costuraRequest) {
 		log.info("[inicia] CosturaController - postCostura");
+		log.info("[idCliente] {}", idCliente);
 		log.info("[finaliza] CosturaController - postCostura");
 		return null;
 	}
