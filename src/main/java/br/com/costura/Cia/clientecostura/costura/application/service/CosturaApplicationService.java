@@ -1,5 +1,6 @@
 package br.com.costura.Cia.clientecostura.costura.application.service;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.validation.Valid;
@@ -7,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import br.com.costura.Cia.clientecostura.cliente.application.service.ClienteService;
+import br.com.costura.Cia.clientecostura.costura.application.api.CosturaClienteListResponse;
 import br.com.costura.Cia.clientecostura.costura.application.api.CosturaRequest;
 import br.com.costura.Cia.clientecostura.costura.application.api.CosturaResponse;
 import br.com.costura.Cia.clientecostura.costura.domain.Costura;
@@ -29,4 +31,11 @@ public class CosturaApplicationService implements CosturaService {
 		return new CosturaResponse(costura.getIdCostura());
 	}
 
+	@Override
+	public List<CosturaClienteListResponse> buscaCosturasDoClienteComId(UUID idCliente) {
+		log.info("[inicia] CosturaApplicationService - buscaCosturasDoClienteComId");
+		clienteService.buscaClienteAtravesId(idCliente);
+		log.info("[finaliza] CosturaApplicationService - buscaCosturasDoClienteComId");
+		return null;
+	}
 }
