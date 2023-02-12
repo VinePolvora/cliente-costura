@@ -27,8 +27,8 @@ public class CosturaInfraRepository implements CosturaRepository {
 	@Override
 	public List<Costura> buscaCosturasDoClienteComId(UUID idCliente) {
 		log.info("[inicia] CosturaInfraRepository - buscaCosturasDoClienteComId");
+		var costuras = costuraSpringDataJPARepository.findByIdCliente(idCliente);
 		log.info("[fianaliza] CosturaInfraRepository - buscaCosturasDoClienteComId");
-		return null;
+		return costuras;
 	}
-
 }
