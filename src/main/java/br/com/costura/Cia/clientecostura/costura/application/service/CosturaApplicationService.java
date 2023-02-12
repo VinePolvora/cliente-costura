@@ -35,7 +35,8 @@ public class CosturaApplicationService implements CosturaService {
 	public List<CosturaClienteListResponse> buscaCosturasDoClienteComId(UUID idCliente) {
 		log.info("[inicia] CosturaApplicationService - buscaCosturasDoClienteComId");
 		clienteService.buscaClienteAtravesId(idCliente);
+		List<Costura> costurasDoCliente = costuraRepository.buscaCosturasDoClienteComId(idCliente);
 		log.info("[finaliza] CosturaApplicationService - buscaCosturasDoClienteComId");
-		return null;
+		return CosturaClienteListResponse.converte(costurasDoCliente);
 	}
 }
