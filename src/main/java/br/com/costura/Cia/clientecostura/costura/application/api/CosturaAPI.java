@@ -38,6 +38,6 @@ public interface CosturaAPI {
 
 	@PatchMapping(value = "/{idCostura}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	CosturaResponse patchCostura(@PathVariable UUID idCliente, @PathVariable UUID idCostura,
+	void patchCostura(@PathVariable UUID idCliente, @PathVariable UUID idCostura,
 			@Valid @RequestBody CosturaAlteracaoRequest costuraAlteracaoRequest);
 }

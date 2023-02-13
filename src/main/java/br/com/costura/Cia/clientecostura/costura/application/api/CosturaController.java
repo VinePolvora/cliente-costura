@@ -53,10 +53,9 @@ public class CosturaController implements CosturaAPI {
 	}
 
 	@Override
-	public CosturaResponse patchCostura(UUID idCliente, UUID idCostura,@Valid CosturaAlteracaoRequest costuraAlteracaoRequest) {
+	public void patchCostura(UUID idCliente, UUID idCostura,@Valid CosturaAlteracaoRequest costuraAlteracaoRequest) {
 		log.info("[inicia] CosturaController - patchCostura");
 		log.info("[idCliente] {} - [idCostura] {}", idCliente, idCostura);
 		log.info("[finaliza] CosturaController - patchCostura");
-		return null;
 	}
 }
