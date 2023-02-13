@@ -2,6 +2,7 @@ package br.com.costura.Cia.clientecostura.costura.application.api;
 
 import java.util.UUID;
 
+import br.com.costura.Cia.clientecostura.costura.domain.Costura;
 import br.com.costura.Cia.clientecostura.costura.domain.FormaPagamento;
 import br.com.costura.Cia.clientecostura.costura.domain.SexoCostura;
 import br.com.costura.Cia.clientecostura.costura.domain.Tamanho;
@@ -10,6 +11,7 @@ import lombok.Value;
 
 @Value
 public class CosturaClienteDetalhadoResponse {
+	
 	private UUID idCostura;
 	private UUID idCliente;
 	private String nomeDonoDaPeca;
@@ -17,5 +19,14 @@ public class CosturaClienteDetalhadoResponse {
 	private Tamanho tamanho;
 	private FormaPagamento formaPagamento;
 	private SexoCostura sexoCostura;
-	private Boolean aceitaTermos;
+
+	public CosturaClienteDetalhadoResponse(Costura costura) {
+		this.idCostura = costura.getIdCostura();
+		this.idCliente = costura.getIdCliente();
+		this.nomeDonoDaPeca = costura.getNomeDonoDaPeca();
+		this.tipoTecido = costura.getTipoTecido();
+		this.tamanho = costura.getTamanho();
+		this.formaPagamento = costura.getFormaPagamento();
+		this.sexoCostura = costura.getSexoCostura();
+	}
 }

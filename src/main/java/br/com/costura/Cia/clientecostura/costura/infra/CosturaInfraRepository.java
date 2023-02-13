@@ -3,10 +3,12 @@ package br.com.costura.Cia.clientecostura.costura.infra;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import br.com.costura.Cia.clientecostura.costura.application.service.CosturaRepository;
 import br.com.costura.Cia.clientecostura.costura.domain.Costura;
+import br.com.costura.Cia.clientecostura.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -30,5 +32,15 @@ public class CosturaInfraRepository implements CosturaRepository {
 		var costuras = costuraSpringDataJPARepository.findByIdCliente(idCliente);
 		log.info("[fianaliza] CosturaInfraRepository - buscaCosturasDoClienteComId");
 		return costuras;
+	}
+
+	@Override
+	public Costura buscaCosturaPeloId(UUID idCostura) {
+		log.info("[inicia] CosturaInfraRepository - buscaCosturaPeloId");
+		var costura = costuraSpringDataJPARepository.findById(idCostura)
+				.orElseThrow(() -> APIException
+						.build(HttpStatus.NOT_FOUND, "Costura não encontrada para o IdCostura = " + idCostura));
+		log.info("[finaliza] CosturaInfraRepository - buscaCosturaPeloId");
+		return costura;
 	}
 }

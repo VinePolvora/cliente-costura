@@ -44,9 +44,9 @@ public class CosturaApplicationService implements CosturaService {
 	@Override
 	public CosturaClienteDetalhadoResponse buscaCosturaDoClienteComId(UUID idCliente, UUID idCostura) {
 		log.info("[inicia] CosturaApplicationService - buscaCosturaDoClienteComId");
-//		clienteService.buscaClienteAtravesId(idCliente);
-//		List<Costura> costurasDoCliente = costuraRepository.buscaCosturasDoClienteComId(idCliente);
+		clienteService.buscaClienteAtravesId(idCliente);
+		Costura costura = costuraRepository.buscaCosturaPeloId(idCostura);
 		log.info("[finaliza] CosturaApplicationService - buscaCosturaDoClienteComId");
-		return null;
+		return new CosturaClienteDetalhadoResponse(costura);
 	}
 }
