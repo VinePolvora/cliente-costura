@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import br.com.costura.Cia.clientecostura.cliente.application.service.ClienteService;
+import br.com.costura.Cia.clientecostura.costura.application.api.CosturaClienteDetalhadoResponse;
 import br.com.costura.Cia.clientecostura.costura.application.api.CosturaClienteListResponse;
 import br.com.costura.Cia.clientecostura.costura.application.api.CosturaRequest;
 import br.com.costura.Cia.clientecostura.costura.application.api.CosturaResponse;
@@ -38,5 +39,14 @@ public class CosturaApplicationService implements CosturaService {
 		List<Costura> costurasDoCliente = costuraRepository.buscaCosturasDoClienteComId(idCliente);
 		log.info("[finaliza] CosturaApplicationService - buscaCosturasDoClienteComId");
 		return CosturaClienteListResponse.converte(costurasDoCliente);
+	}
+
+	@Override
+	public CosturaClienteDetalhadoResponse buscaCosturaDoClienteComId(UUID idCliente, UUID idCostura) {
+		log.info("[inicia] CosturaApplicationService - buscaCosturaDoClienteComId");
+//		clienteService.buscaClienteAtravesId(idCliente);
+//		List<Costura> costurasDoCliente = costuraRepository.buscaCosturasDoClienteComId(idCliente);
+		log.info("[finaliza] CosturaApplicationService - buscaCosturaDoClienteComId");
+		return null;
 	}
 }

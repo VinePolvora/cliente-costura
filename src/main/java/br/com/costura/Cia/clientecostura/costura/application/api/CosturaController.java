@@ -39,7 +39,8 @@ public class CosturaController implements CosturaAPI {
 	public CosturaClienteDetalhadoResponse getCosturaDoClienteComId(UUID idCliente, UUID idCostura) {
 		log.info("[inicia] CosturaController - getCosturaDoClienteComId");
 		log.info("[idCliente] {} - [idCostura] {}", idCliente, idCostura);
+		CosturaClienteDetalhadoResponse costura = costuraService.buscaCosturaDoClienteComId(idCliente, idCostura);
 		log.info("[finaliza] CosturaController - getCosturaDoClienteComId");
-		return null;
+		return costura;
 	}
 }
