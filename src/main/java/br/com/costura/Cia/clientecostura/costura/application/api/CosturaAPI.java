@@ -25,4 +25,9 @@ public interface CosturaAPI {
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
 	List<CosturaClienteListResponse> getCosturasDoClientecomId(@PathVariable UUID idCliente);
+	
+	@GetMapping(value = "/{idCostura}")
+	@ResponseStatus(code = HttpStatus.OK)
+	CosturaClienteDetalhadoResponse getCosturaDoClienteComId(@PathVariable UUID idCliente, 
+			@PathVariable UUID idCostura);
 }
