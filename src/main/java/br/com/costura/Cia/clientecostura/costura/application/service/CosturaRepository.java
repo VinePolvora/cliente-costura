@@ -9,4 +9,5 @@ public interface CosturaRepository {
 	Costura salvaCostura(Costura costura);
 	List<Costura> buscaCosturasDoClienteComId(UUID idCliente);
 	Costura buscaCosturaPeloId(UUID idCostura);
+	void deletaCostura(Costura costura);
 }

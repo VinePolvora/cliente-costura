@@ -37,10 +37,16 @@ public class CosturaInfraRepository implements CosturaRepository {
 	@Override
 	public Costura buscaCosturaPeloId(UUID idCostura) {
 		log.info("[inicia] CosturaInfraRepository - buscaCosturaPeloId");
-		var costura = costuraSpringDataJPARepository.findById(idCostura)
-				.orElseThrow(() -> APIException
-						.build(HttpStatus.NOT_FOUND, "Costura não encontrada para o IdCostura = " + idCostura));
+		var costura = costuraSpringDataJPARepository.findById(idCostura).orElseThrow(() -> APIException
+				.build(HttpStatus.NOT_FOUND, "Costura não encontrada para o IdCostura = " + idCostura));
 		log.info("[finaliza] CosturaInfraRepository - buscaCosturaPeloId");
 		return costura;
+	}
+
+	@Override
+	public void deletaCostura(Costura costura) {
+		log.info("[inicia] CosturaInfraRepository - deletaCostura");
+		costuraSpringDataJPARepository.delete(costura);
+		log.info("[inicia] CosturaInfraRepository - deletaCostura");
 	}
 }

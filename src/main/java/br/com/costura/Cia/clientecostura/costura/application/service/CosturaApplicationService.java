@@ -53,8 +53,9 @@ public class CosturaApplicationService implements CosturaService {
 	@Override
 	public void deletaCosturaDoClienteComId(UUID idCliente, UUID idCostura) {
 		log.info("[inicia] CosturaApplicationService - deletaCosturaDoClienteComId");
-//		clienteService.deletaClienteAtravesId(idCliente);
-//		Costura costura = costuraRepository.deletaCosturaPeloId(idCostura);
+		clienteService.buscaClienteAtravesId(idCliente);
+		Costura costura = costuraRepository.buscaCosturaPeloId(idCostura);
+		costuraRepository.deletaCostura(costura);
 		log.info("[finaliza] CosturaApplicationService - deletaCosturaDoClienteComId");
 	}
 }
