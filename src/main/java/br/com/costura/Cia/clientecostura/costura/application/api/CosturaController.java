@@ -43,4 +43,12 @@ public class CosturaController implements CosturaAPI {
 		log.info("[finaliza] CosturaController - getCosturaDoClienteComId");
 		return costura;
 	}
+
+	@Override
+	public void deletaCosturaAtravesId(UUID idCliente, UUID idCostura) {
+		log.info("[inicia] CosturaController - deletaCosturaAtravesId");
+		log.info("[idCliente] {} - [idCostura] {}", idCliente, idCostura);
+		costuraService.deletaCosturaDoClienteComId(idCliente, idCostura);
+		log.info("[finaliza] CosturaController - deletaCosturaAtravesId");
+	}
 }

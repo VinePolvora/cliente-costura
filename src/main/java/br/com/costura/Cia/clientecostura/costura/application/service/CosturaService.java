@@ -14,4 +14,5 @@ public interface CosturaService {
 	CosturaResponse criaCostura(UUID idCliente, @Valid CosturaRequest costuraRequest);
 	List<CosturaClienteListResponse> buscaCosturasDoClienteComId(UUID idCliente);
 	CosturaClienteDetalhadoResponse buscaCosturaDoClienteComId(UUID idCliente, UUID idCostura);
+	void deletaCosturaDoClienteComId(UUID idCliente, UUID idCostura);
 }

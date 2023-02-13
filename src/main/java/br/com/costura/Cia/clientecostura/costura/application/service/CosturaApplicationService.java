@@ -49,4 +49,12 @@ public class CosturaApplicationService implements CosturaService {
 		log.info("[finaliza] CosturaApplicationService - buscaCosturaDoClienteComId");
 		return new CosturaClienteDetalhadoResponse(costura);
 	}
+
+	@Override
+	public void deletaCosturaDoClienteComId(UUID idCliente, UUID idCostura) {
+		log.info("[inicia] CosturaApplicationService - deletaCosturaDoClienteComId");
+//		clienteService.deletaClienteAtravesId(idCliente);
+//		Costura costura = costuraRepository.deletaCosturaPeloId(idCostura);
+		log.info("[finaliza] CosturaApplicationService - deletaCosturaDoClienteComId");
+	}
 }
