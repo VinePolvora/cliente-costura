@@ -56,6 +56,7 @@ public class CosturaController implements CosturaAPI {
 	public void patchCostura(UUID idCliente, UUID idCostura,@Valid CosturaAlteracaoRequest costuraAlteracaoRequest) {
 		log.info("[inicia] CosturaController - patchCostura");
 		log.info("[idCliente] {} - [idCostura] {}", idCliente, idCostura);
+		costuraService.alteraCosturaDoClienteComId(idCliente, idCostura, costuraAlteracaoRequest);
 		log.info("[finaliza] CosturaController - patchCostura");
 	}
 }

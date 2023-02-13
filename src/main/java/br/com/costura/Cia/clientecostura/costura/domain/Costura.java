@@ -14,6 +14,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import br.com.costura.Cia.clientecostura.costura.application.api.CosturaAlteracaoRequest;
 import br.com.costura.Cia.clientecostura.costura.application.api.CosturaRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -57,5 +58,15 @@ public class Costura {
 		this.sexoCostura = costuraRequest.getSexoCostura();
 		this.aceitaTermos = costuraRequest.getAceitaTermos();
 		this.dataHoraDoCadastro = LocalDateTime.now();
+	}
+
+	public void altera(CosturaAlteracaoRequest costuraRequest) {
+		this.nomeDonoDaPeca = costuraRequest.getNomeDonoDaPeca();
+		this.tipoTecido = costuraRequest.getTipoTecido();
+		this.tamanho = costuraRequest.getTamanho();
+		this.formaPagamento = costuraRequest.getFormaPagamento();
+		this.sexoCostura = costuraRequest.getSexoCostura();
+		this.aceitaTermos = costuraRequest.getAceitaTermos();
+		this.dataHoraDaUltimaAlteracao = LocalDateTime.now();		
 	}
 }

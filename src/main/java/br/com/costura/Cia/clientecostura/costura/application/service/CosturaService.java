@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import javax.validation.Valid;
 
+import br.com.costura.Cia.clientecostura.costura.application.api.CosturaAlteracaoRequest;
 import br.com.costura.Cia.clientecostura.costura.application.api.CosturaClienteDetalhadoResponse;
 import br.com.costura.Cia.clientecostura.costura.application.api.CosturaClienteListResponse;
 import br.com.costura.Cia.clientecostura.costura.application.api.CosturaRequest;
@@ -15,4 +16,6 @@ public interface CosturaService {
 	List<CosturaClienteListResponse> buscaCosturasDoClienteComId(UUID idCliente);
 	CosturaClienteDetalhadoResponse buscaCosturaDoClienteComId(UUID idCliente, UUID idCostura);
 	void deletaCosturaDoClienteComId(UUID idCliente, UUID idCostura);
+	void alteraCosturaDoClienteComId(UUID idCliente, UUID idCostura,
+			CosturaAlteracaoRequest costuraAlteracaoRequest);
 }
